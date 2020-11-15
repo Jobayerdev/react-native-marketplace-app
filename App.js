@@ -5,12 +5,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 import AppButton from "./app/components/Button"
 const App = () => {
-	return (
-		<View>
-			<ViewImageScreen />
-			<AppButton title="Logind" onPress={() => console.log("Tapped")} />
-		</View>
-	)
+	return <WelcomeScreen />
 }
 
 export default App
