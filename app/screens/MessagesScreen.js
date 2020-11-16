@@ -9,6 +9,7 @@ import {
 	StatusBar,
 } from "react-native"
 import ListItem from "../components/ListItem"
+import ListItemDeleteAction from "../components/ListItemDeleteAction"
 import ListItemSeparator from "../components/ListItemSeparator"
 import Screen from "../components/Screen"
 
@@ -45,9 +46,10 @@ const MessagesScreen = () => {
 						title={item.title}
 						subTitle={item.description}
 						onPress={() => console.log(item)}
+						renderRightActions={ListItemDeleteAction}
 					/>
 				)}
-				ItemSeparatorComponent={() => <ListItemSeparator />}
+				ItemSeparatorComponent={ListItemSeparator}
 			/>
 		</Screen>
 	)
