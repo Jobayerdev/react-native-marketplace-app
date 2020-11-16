@@ -44,6 +44,7 @@ const MessagesScreen = () => {
 						image={item.image}
 						title={item.title}
 						subTitle={item.description}
+						onPress={() => console.log(item)}
 					/>
 				)}
 				ItemSeparatorComponent={() => <ListItemSeparator />}
