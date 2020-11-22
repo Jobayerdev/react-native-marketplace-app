@@ -8,8 +8,8 @@ import {
 	View,
 } from "react-native"
 
-const Screen = ({ children }) => {
-	return <SafeAreaView style={styles.screen}>{children}</SafeAreaView>
+const Screen = ({ children, style }) => {
+	return <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>
 }
 
 export default Screen
