@@ -9,7 +9,11 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen"
 import MessagesScreen from "./app/screens/MessagesScreen"
 
 const App = () => {
-	return <MessagesScreen />
+	return (
+		<Screen>
+			<Icon name="email" size={50} backgroundColor="red" iconColor="white" />
+		</Screen>
+	)
 }
 
 export default App
