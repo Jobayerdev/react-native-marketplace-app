@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
 	FlatList,
 	SafeAreaView,
@@ -13,7 +13,7 @@ import ListItemDeleteAction from "../components/ListItemDeleteAction"
 import ListItemSeparator from "../components/ListItemSeparator"
 import Screen from "../components/Screen"
 
-const messages = [
+const initialMessages = [
 	{
 		id: 1,
 		title: "T1",
@@ -35,6 +35,11 @@ const messages = [
 ]
 
 const MessagesScreen = () => {
+	const [messages, setMessages] = useState(initialMessages)
+	const [refreshing, setRefreshing] = useState(false)
+	const handlerDelete = (message) => {
+		setMessages(messages.filter((m) => m.id !== message.id))
+	}
 	return (
 		<Screen>
 			<FlatList
@@ -46,10 +51,23 @@ const MessagesScreen = () => {
 						title={item.title}
 						subTitle={item.description}
 						onPress={() => console.log(item)}
-						renderRightActions={ListItemDeleteAction}
+						renderRightActions={() => (
+							<ListItemDeleteAction onPress={() => handlerDelete(item)} />
+						)}
 					/>
 				)}
 				ItemSeparatorComponent={ListItemSeparator}
+				refreshing={refreshing}
+				onRefresh={() => {
+					setMessages([
+						{
+							id: 2,
+							title: "T2",
+							description: "D2",
+							image: require("../assets/jj.jpg"),
+						},
+					])
+				}}
 			/>
 		</Screen>
 	)
