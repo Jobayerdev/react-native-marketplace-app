@@ -1,5 +1,5 @@
-import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import React, { useState } from "react"
+import { StyleSheet, Text, TextInput, View } from "react-native"
 import ViewImageScreen from "./app/screens/ViewImageScreen"
 import WelcomeScreen from "./app/screens/WelcomeScreen"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
@@ -12,9 +12,16 @@ import Screen from "./app/components/Screen"
 import ListItem from "./app/components/ListItem"
 import AccountScreen from "./app/screens/AccountScreen"
 import ListingsScreen from "./app/screens/ListingsScreen"
+import AppTextInput from "./app/components/AppTextInput"
 
 const App = () => {
-	return <ListingsScreen />
+	return (
+		<Screen>
+			<View>
+				<AppTextInput icon="mail" placeholder="Username" />
+			</View>
+		</Screen>
+	)
 }
 
 export default App
