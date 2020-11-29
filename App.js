@@ -32,10 +32,17 @@ const categories = [
 
 const App = () => {
 	const [isNew, setIsNew] = useState(false)
+	const [category, setCategory] = useState("")
 	return (
 		<Screen>
 			<View>
-				<AppPickerInput items={categories} placeholder="Category" icon="apps" />
+				<AppPickerInput
+					items={categories}
+					placeholder="Category"
+					icon="apps"
+					selectedItem={category}
+					onSelectItem={(item) => setCategory(item)}
+				/>
 				<AppTextInput placeholder="Email" icon="email" />
 			</View>
 		</Screen>
