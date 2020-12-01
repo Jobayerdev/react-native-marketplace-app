@@ -1,4 +1,3 @@
-import React from "react"
 import {
 	Platform,
 	SafeAreaView,
@@ -7,6 +6,8 @@ import {
 	Text,
 	View,
 } from "react-native"
+
+import React from "react"
 
 const Screen = ({ children, style }) => {
 	return <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>
